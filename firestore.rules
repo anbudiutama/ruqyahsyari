@@ -1,0 +1,18 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Semua operasi dilakukan melalui Firebase Admin SDK (server-side)
+    // Admin SDK BYPASS rules ini — jadi data tetap bisa dibaca/ditulis dari API routes
+    // Rules di bawah ini memblokir akses langsung dari browser/client
+
+    match /pendaftaran/{docId} {
+      allow read, write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

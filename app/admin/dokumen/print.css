@@ -1,0 +1,167 @@
+/* Print-optimized document styles */
+.doc-page {
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 20mm 25mm;
+  background: white;
+  font-family: "Times New Roman", "Amiri", serif;
+  font-size: 12pt;
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+.doc-page h1 {
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 4pt;
+}
+
+.doc-page h2 {
+  font-size: 13pt;
+  font-weight: bold;
+  margin-top: 16pt;
+  margin-bottom: 6pt;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 3pt;
+}
+
+.doc-page h3 {
+  font-size: 12pt;
+  font-weight: bold;
+  margin-top: 12pt;
+  margin-bottom: 4pt;
+}
+
+.doc-page p {
+  text-align: justify;
+  margin-bottom: 8pt;
+}
+
+.doc-page .center { text-align: center; }
+.doc-page .right  { text-align: right; }
+.doc-page .bold   { font-weight: bold; }
+.doc-page .italic { font-style: italic; }
+
+.doc-page .header-logo {
+  text-align: center;
+  margin-bottom: 12pt;
+  padding-bottom: 12pt;
+  border-bottom: 3px double #064e3b;
+}
+
+.doc-page .header-logo .brand {
+  font-size: 18pt;
+  font-weight: bold;
+  color: #064e3b;
+}
+
+.doc-page .header-logo .tagline {
+  font-size: 10pt;
+  color: #555;
+}
+
+.doc-page .doc-number {
+  font-size: 11pt;
+  color: #555;
+  text-align: center;
+  margin-bottom: 16pt;
+}
+
+.doc-page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12pt 0;
+}
+
+.doc-page table th,
+.doc-page table td {
+  border: 1px solid #999;
+  padding: 6pt 10pt;
+  text-align: left;
+  font-size: 11pt;
+}
+
+.doc-page table th {
+  background: #f0f0f0;
+  font-weight: bold;
+}
+
+.doc-page .no-border td,
+.doc-page .no-border th {
+  border: none;
+  padding: 2pt 10pt 2pt 0;
+}
+
+.doc-page .signature-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40pt;
+  page-break-inside: avoid;
+}
+
+.doc-page .signature-box {
+  text-align: center;
+  width: 45%;
+}
+
+.doc-page .signature-line {
+  margin-top: 60pt;
+  border-bottom: 1px solid #333;
+  margin-bottom: 4pt;
+}
+
+.doc-page .stamp-area {
+  font-size: 9pt;
+  color: #999;
+  margin-top: 4pt;
+}
+
+.doc-page ul {
+  padding-left: 20pt;
+  margin: 6pt 0;
+}
+
+.doc-page li {
+  margin-bottom: 4pt;
+}
+
+.doc-page .total-row td {
+  font-weight: bold;
+  background: #f9f9f9;
+}
+
+.doc-page .closing-doa {
+  text-align: center;
+  font-style: italic;
+  color: #555;
+  margin-top: 20pt;
+  font-size: 11pt;
+}
+
+/* Print styles */
+@media print {
+  body * { visibility: hidden; }
+  .print-target, .print-target * { visibility: visible; }
+  .print-target {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .doc-page {
+    padding: 15mm 20mm;
+    box-shadow: none;
+    border: none;
+  }
+  .no-print { display: none !important; }
+}
+
+@media screen {
+  .doc-page {
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+}
