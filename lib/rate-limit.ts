@@ -28,8 +28,8 @@ export function rateLimit(ip: string): { allowed: boolean; remaining: number } {
 if (typeof setInterval !== "undefined") {
   setInterval(() => {
     const now = Date.now();
-    for (const [ip, entry] of requests.entries()) {
+    requests.forEach((entry, ip) => {
       if (now > entry.resetAt) requests.delete(ip);
-    }
+    });
   }, 5 * 60 * 1000);
 }
