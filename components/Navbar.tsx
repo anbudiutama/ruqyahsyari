@@ -68,6 +68,12 @@ export default function Navbar() {
             FAQ
           </Link>
           <Link
+            href="/blog"
+            className="text-white/85 text-sm font-medium hover:text-gold-400 transition-colors no-underline"
+          >
+            Blog
+          </Link>
+          <Link
             href="/formulir"
             className="bg-gradient-to-br from-gold-500 to-gold-400 text-emerald-900 px-6 py-2.5 rounded-lg font-bold text-sm hover:-translate-y-0.5 hover:shadow-lg transition-all no-underline"
           >
@@ -122,6 +128,13 @@ export default function Navbar() {
             className="text-white/85 text-base font-medium no-underline py-2"
           >
             FAQ
+          </Link>
+          <Link
+            href="/blog"
+            onClick={() => setMenuOpen(false)}
+            className="text-white/85 text-base font-medium no-underline py-2"
+          >
+            Blog
           </Link>
           <Link
             href="/formulir"
