@@ -155,7 +155,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {/* Google Analytics placeholder — replace GA_ID with your Measurement ID */}
+        {/* Google Analytics */}
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>
             <script
@@ -174,6 +174,21 @@ export default function RootLayout({
             />
           </>
         )}
+        {/* Google Ads (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-415170601"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-415170601');
+            `,
+          }}
+        />
       </head>
       <body className="font-jakarta">
         {children}
