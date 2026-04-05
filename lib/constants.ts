@@ -1,6 +1,13 @@
 export const WHATSAPP_NUMBER =
   process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "6281326320313";
-export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
+
+const WA_GREETING = `Assalamu'alaikum RuqyahSyari.com,
+
+Saya ingin berkonsultasi mengenai gangguan yang saya/keluarga/tempat usaha saya alami.
+
+Mohon bantuannya. Terima kasih.`;
+
+export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WA_GREETING)}`;
 
 export const SERVICES = [
   {
