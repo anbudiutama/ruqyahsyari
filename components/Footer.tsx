@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { WHATSAPP_URL } from "@/lib/constants";
 
 export default function Footer() {
@@ -6,9 +7,13 @@ export default function Footer() {
     <footer className="bg-charcoal text-white/50 pt-16 pb-8 px-6">
       <div className="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
-          <h3 className="font-amiri text-2xl text-white mb-3">
-            ☪ RuqyahSyari.com
-          </h3>
+          <Image
+            src="/logo.png"
+            alt="RuqyahSyari.com"
+            width={160}
+            height={87}
+            className="h-14 w-auto mb-4 brightness-0 invert opacity-90"
+          />
           <p className="text-sm leading-7">
             Layanan ruqyah syar&apos;iyyah profesional untuk ketenangan jiwa,
             rumah, dan usaha Anda. Berdasarkan Al-Qur&apos;an & Hadits,

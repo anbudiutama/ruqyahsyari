@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -27,12 +28,14 @@ export default function Navbar() {
           href="/"
           className="flex items-center gap-2.5 text-white no-underline"
         >
-          <span className="w-10 h-10 rounded-[10px] bg-gradient-to-br from-gold-500 to-gold-300 flex items-center justify-center text-xl text-emerald-900">
-            ☪
-          </span>
-          <span className="font-amiri text-2xl font-bold">
-            RuqyahSyari.com
-          </span>
+          <Image
+            src="/logo.png"
+            alt="RuqyahSyari.com"
+            width={140}
+            height={76}
+            className="h-10 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}
